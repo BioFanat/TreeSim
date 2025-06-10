@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""
-Correlated Tree Generator and Analyzer
-
-A utility for generating pairs of correlated trees (preferential attachment or uniform attachment)
-and computing various test statistics to measure their similarity.
-
-Author: [Your Name]
-License: MIT
-"""
 
 import argparse
 import json
