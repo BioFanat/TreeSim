@@ -14,7 +14,7 @@ The framework provides three test statistics to measure tree similarity:
 2. **Largest Common Subtree (LCS)**: Size of the largest common rooted subtree, normalized by tree size
 3. **Rooted Subtree Similarity**: Average fraction of nodes with matching rooted subtree structures
 
-## Mathematical Theory
+## Underlying Math
 
 ### Tree Generation Models
 
@@ -45,38 +45,6 @@ This coupling mechanism ensures that:
 - When ρ = 0: Trees are generated independently
 - When ρ = 1: Trees are identical (perfect correlation)
 - When 0 < ρ < 1: Trees share some structural decisions, creating partial similarity
-
-## Test Statistics
-
-### 1. Shared Edges Fraction
-
-Measures the proportion of edges that appear in both trees:
-
-```
-SEF(T₁, T₂) = |E(T₁) ∩ E(T₂)| / |E(T₁)|
-```
-
-Where E(T) denotes the edge set of tree T. This statistic directly captures how many parent-child relationships are preserved between trees.
-
-### 2. Largest Common Subtree (LCS)
-
-Computes the size of the largest common rooted subtree, normalized by tree size:
-
-```
-LCS(T₁, T₂) = |MaxCommonSubtree(T₁, T₂)| / n
-```
-
-The algorithm uses dynamic programming to find the maximum weighted common subsequence of children at each node, where weights are the sizes of matching subtrees.
-
-### 3. Rooted Subtree Similarity
-
-Measures the fraction of nodes whose rooted subtrees have identical structure:
-
-```
-RSS(T₁, T₂) = |{v ∈ V : Subtree(T₁, v) ≅ Subtree(T₂, v)}| / n
-```
-
-Where Subtree(T, v) denotes the rooted subtree at node v, and ≅ denotes structural isomorphism. The implementation uses canonical hashing to efficiently compare subtree structures.
 
 ## Usage
 
